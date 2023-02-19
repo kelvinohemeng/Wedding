@@ -1,0 +1,326 @@
+@import "./globals";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  font-family: "Barlow", sans-serif;
+}
+p {
+  font-family: $text-base;
+  font-weight: 200;
+}
+section {
+  height: 100vh;
+  margin: 120px 0;
+}
+.titles {
+  font-family: Holimount, cursive;
+  font-weight: 200;
+}
+
+////Password Page/////
+////Password Page/////
+////Password Page/////
+
+.password-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+  form {
+    h1 {
+      font-family: Holimount;
+      font-size: $xx-large;
+      font-weight: 100;
+    }
+    .form-input {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      input {
+        min-width: 250px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 0.5px solid gray;
+        font-family: $text-base;
+        font-size: $medium;
+        &:focus {
+          outline: none;
+        }
+      }
+      .err {
+        font-size: 1.5rem;
+        color: red;
+      }
+      button {
+        min-width: 200px;
+        padding: 10px 15px;
+        align-self: center;
+        border: none;
+        background-color: black;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: $text-base;
+        font-size: $medium;
+      }
+    }
+    // display: flex;
+  }
+  .p-p-footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 12px;
+    color: gray;
+  }
+}
+//home//
+// .home {
+// }
+
+//center content
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+//center background
+@mixin centerBackground() {
+  background-position: center;
+  background-size: cover;
+}
+
+//nav//
+//nav//
+//nav//
+nav {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 10;
+  .nav {
+    height: 100%;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    .titles {
+      font-size: $large;
+    }
+    .nav-list {
+      margin-left: auto;
+      ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        cursor: pointer;
+        font-size: $medium;
+        li {
+          transition: 300ms ease-out;
+          &:hover {
+            color: $theme2;
+          }
+        }
+      }
+    }
+    a {
+      color: black;
+    }
+  }
+}
+
+//header//
+//header//
+//header//
+
+.header {
+  height: 100vh;
+  .header-bg {
+    position: relativ;
+    @include flexCenter();
+    height: 100%;
+    background: url(../images/bg.png) no-repeat;
+    @include centerBackground();
+    background-attachment: fixed;
+    .save-date {
+      background-color: $theme1;
+      padding: 20px 35px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 30px;
+      line-height: 50px;
+      .titles {
+        font-size: $large;
+        color: $theme3;
+        font-weight: 200;
+      }
+    }
+    .titles {
+      font-size: $xxx-large;
+      color: $theme1;
+      font-weight: 200;
+    }
+  }
+}
+
+//About//
+//About//
+//About//
+.about {
+  height: 100%;
+  .names {
+    @include flexCenter();
+    h1 {
+      font-size: $xx-large;
+      font-weight: 200;
+    }
+    margin-bottom: 30px;
+  }
+  .image-context {
+    width: 100%;
+    @include flexCenter();
+    gap: 30px;
+    .img-contain {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      .male-image {
+        max-width: 400px;
+        height: 600px;
+        aspect-ratio: 1/1.5;
+        background: url(../images/male.png) no-repeat;
+        @include centerBackground();
+        border-radius: 10px;
+      }
+      .female-image {
+        max-width: 400px;
+        height: 600px;
+        aspect-ratio: 1/1.5;
+        background: url(../images/female.png) no-repeat;
+        @include centerBackground();
+        border-radius: 10px;
+      }
+      p {
+        max-width: 400px;
+        text-align: center;
+        color: $text;
+        line-height: $reading;
+      }
+    }
+  }
+}
+
+//preview - slider//
+//preview - slider//
+//preview - slider//
+
+.preview {
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+  }
+  .titles {
+    align-self: flex-end;
+    font-size: $xxx-large;
+    color: $theme2;
+  }
+  .preview-img {
+    height: 100%;
+    background: url(../images/preview.png) no-repeat;
+    @include centerBackground();
+  }
+}
+
+//form-section//
+//form-section//
+//form-section//
+.form-section {
+  height: 60vh;
+  .container {
+    @include flexCenter();
+    .form {
+      padding-right: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 30px;
+      flex: 2;
+      .titles {
+        font-size: $xx-large;
+        color: $theme2;
+      }
+      textarea,
+      input {
+        &:focus {
+          outline: none;
+        }
+      }
+      .name-email {
+        display: flex;
+        gap: 10px;
+        input {
+          flex: 1;
+          border: none;
+          border-bottom: 1px solid black;
+          padding: 10px;
+          font-size: $medium;
+          font-family: $text-base;
+        }
+      }
+      .textarea-submit {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        textarea {
+          border: none;
+          border-bottom: 1px solid black;
+          padding: 10px;
+          font-size: $medium;
+          font-family: $text-base;
+          resize: none;
+        }
+        button {
+          align-self: center;
+          margin: 30px;
+          padding: 10px 55px;
+          font-family: $text-base;
+          font-size: $medium;
+          background-color: $theme2;
+          border: none;
+          cursor: pointer;
+          border-radius: 10px;
+        }
+      }
+    }
+    .form-img {
+      flex: 1;
+      height: 100%;
+      background: url(../images/female.png) no-repeat;
+      @include centerBackground();
+    }
+  }
+}
+
+//footer//
+//footer//
+//footer//
+.footer {
+  @include flexCenter();
+  padding: 30px;
+}
